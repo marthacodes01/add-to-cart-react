@@ -11,19 +11,20 @@ export default function Index() {
   //Declaring state variables
   let [count, setCount] = useState(0);
   let [isSoldOut, setIsSoldOut] = useState(false);
-  const increment = () => {
+
+  let increment = () => {
     if (!isSoldOut) {
       setCount(count + 1);
     }
   };
 
-  const decrement = () => {
+  let decrement = () => {
     if (!isSoldOut && count > 0) {
       setCount(count - 1);
     }
   };
 
-  const handleClick = () => {
+  function handleClick() {
     if (isSoldOut) {
       alert("Sorry, this product is sold out.");
     } else if (count > 0) {
@@ -31,7 +32,7 @@ export default function Index() {
     } else {
       alert("Please select at least one item to add to your cart.");
     }
-  };
+  }
 
   return (
     <main className="bg-zinc-300">
@@ -117,6 +118,129 @@ export default function Index() {
           alt=""
         />
       </div>
+
+      <footer className="bg-zinc-500 p-8 mt-4">
+        <div className="grid  md:grid-cols-4 gap-8">
+          <div className="flex justify-between">
+            <div className="text-white">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+                euismod lectus vel libero laoreet convallis.
+              </p>
+            </div>
+            <div className="text-white">
+              <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#" class="hover:underline">
+                    Collections
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">
+                    Men
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">
+                    Women
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">
+                    Contacts
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="text-white">
+            <h4 className="text-lg font-semibold mb-4">
+              SUBSCRIBE TO OUR NEWSLETTER
+            </h4>
+            <form action="" class="space-y-4">
+              <div>
+                <label for="name" class="block text-sm mb-1">
+                  Enter your name:
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="e.g. Mike Shinoda"
+                  class="w-70 p-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <button
+                type="submit"
+                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+          \
+          <div className="text-white">
+            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
+            <p className="mb-2 font-semibold">Phone Numbers:</p>
+            <ul className="space-y-2">
+              <li>
+                <span className="font-semibold">Customer Support:</span>{" "}
+                +254786960943
+              </li>
+              <li>
+                <span className="font-semibold">Sales Inquiry:</span>{" "}
+                +25434587612
+              </li>
+              <li>
+                <span className="font-semibold">General Info:</span>{" "}
+                +25478904231796
+              </li>
+            </ul>
+            <p className="mt-4 font-semibold">Location:</p>
+            <p>Westlands, Suite 456,</p>
+            <p>123 Muthithi Road </p>
+          </div>
+        </div>
+
+        <div className="mt-8  items-center border-t border-gray-400 pt-4">
+          <div className="items-center space-x-4">
+            <h5 className="text-white text-center">Follow Us:</h5>
+            <ul className="flex gap-4 mt-4 justify-center">
+              <li>
+                <img
+                  src="https://th.bing.com/th?id=OIP.hQ2zPS6VNQFnizu6LSU1ngHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"
+                  alt=""
+                  className="w-10 h-10 rounded"
+                />
+              </li>
+
+              <li>
+                <img
+                  src="https://th.bing.com/th?id=OIP.5pHcxFDopHtlPjDJCBm9uAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"
+                  alt=""
+                  className="w-10 h-10 rounded"
+                />
+              </li>
+              <li>
+                <img
+                  src="https://th.bing.com/th?id=OIP.1hX8tUyNC8XTZ8u6BLuGEAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"
+                  alt=""
+                  className="w-10 h-10 rounded"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="mt-6 text-center text-white text-sm">
+          &copy; 2024 Sneakers Shop. All rights reserved.
+        </div>
+      </footer>
     </main>
   );
 }
